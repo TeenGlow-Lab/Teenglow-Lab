@@ -41,6 +41,31 @@
     .product-list li{background:white;padding:12px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.04)}
     .badge{background:var(--beige);padding:6px 8px;border-radius:6px;font-weight:700}
     .center{text-align:center}
+
+/* Bundle highlight & collapsible styles */
+.bundle-highlight {
+  outline: 3px solid rgba(164,147,130,0.0);
+  transition: outline-color 0.35s ease, box-shadow 0.35s ease;
+}
+.bundle-highlight.flash {
+  outline-color: rgba(164,147,130,0.45);
+  box-shadow: 0 10px 30px rgba(164,147,130,0.08);
+}
+.bundle-collapsible {display:block;}
+.bundle-collapsible .collapse-toggle {
+  display:none;
+  padding:8px 10px;
+  border-radius:8px;
+  background:var(--beige);
+  border:1px solid rgba(0,0,0,0.03);
+  cursor:pointer;
+}
+@media (max-width:720px){
+  .bundle-collapsible .collapse-toggle {display:block;margin-bottom:10px}
+  .bundle-collapsible .bundle-content {display:none}
+  .bundle-collapsible.open .bundle-content {display:block}
+}
+    
   </style>
 </head>
 <body>
@@ -276,6 +301,39 @@ function scrollToProduct(id){
 
 /* escape helper */
 function escapeHtml(s){ if(!s) return ''; return s.replace(/[&<>"']/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];})}
+
+/* Highlight + collapsible behavior for bundles */
+function flashBundle(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  el.classList.add('bundle-highlight','flash');
+  setTimeout(()=> el.classList.remove('flash'), 1200);
+}
+
+/* when clicking anchor links (page has fragment), flash the target */
+window.addEventListener('hashchange', ()=> {
+  const id = location.hash.replace('#','');
+  if(id && id.startsWith('bundle-')) flashBundle(id);
+});
+
+/* initial load if hash present */
+document.addEventListener('DOMContentLoaded', ()=> {
+  const id = location.hash.replace('#','');
+  if(id && id.startsWith('bundle-')) setTimeout(()=> flashBundle(id), 300);
+
+  /* add collapse toggles */
+  document.querySelectorAll('.bundle-collapsible').forEach((b,i)=>{
+    const btn = document.createElement('button');
+    btn.className='collapse-toggle';
+    btn.textContent = 'Show details';
+    btn.onclick = ()=> {
+      b.classList.toggle('open');
+      btn.textContent = b.classList.contains('open') ? 'Hide details' : 'Show details';
+    };
+    b.insertBefore(btn, b.firstChild);
+  });
+});
+  
 </script>
 </body>
 </html>
