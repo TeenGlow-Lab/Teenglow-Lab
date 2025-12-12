@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TeenGlow Lab — Self Improvement & Glow Up</title>
+  <meta name="description" content="Luxury self-improvement printables for teens — challenges, planners, routines and trackers to help you level up." />
+  <style>
+    /* Luxury Beige theme - TeenGlow Lab */
+    :root{
+      --cream:#F9F7F5;
+      --beige:#EDE6DF;
+      --taupe:#D4C7BC;
+      --cocoa:#A49382;
+      --charcoal:#2A2A2A;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Montserrat, Arial, sans-serif;background:var(--cream);color:var(--charcoal);margin:0;padding:0;}
+    .container{max-width:var(--max-width);margin:36px auto;padding:20px;}
+    .header{display:flex;align-items:center;gap:18px;justify-content:space-between;}
+    .logo{font-family:Playfair Display, Georgia, serif;font-size:28px;color:var(--charcoal);line-height:1;}
+    .tag{color:var(--cocoa);font-size:13px;}
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.65), rgba(237,230,223,0.6));padding:26px;border-radius:12px;margin-top:18px;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px;}
+    .card{background:white;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);display:flex;flex-direction:column;gap:8px;}
+    .card img{width:100%;height:140px;object-fit:cover;border-radius:6px;}
+    .button{display:inline-block;background:var(--cocoa);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;}
+    .footer{margin-top:40px;padding:20px;text-align:center;color:var(--taupe);font-size:14px;}
+    nav a{margin-left:14px;color:var(--charcoal);text-decoration:none;font-weight:600}
+    h1,h2,h3{font-family:Playfair Display, Georgia, serif;margin:0 0 6px 0}
+    .meta{color:#6b6b6b;font-size:14px}
+    .product-content{background:white;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.04);margin-top:18px}
+    .print-btn{margin-top:12px;background:transparent;border:1px solid var(--cocoa);color:var(--cocoa);padding:8px 12px;border-radius:8px;cursor:pointer}
+    @media (max-width:600px){.header{flex-direction:column;align-items:flex-start}.logo{font-size:22px}}
+    .topbar{display:flex;align-items:center;gap:8px}
+    .price{font-weight:700;color:var(--charcoal)}
+    hr{border:none;border-top:1px solid #f0ebe8;margin:18px 0}
+    .small{font-size:13px;color:#6b6b6b}
+    .product-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .product-list li{background:white;padding:12px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.04)}
+    .badge{background:var(--beige);padding:6px 8px;border-radius:6px;font-weight:700}
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <div class="logo">TeenGlow Lab</div>
+        <div class="tag">Self Improvement & Glow Up</div>
+      </div>
+      <div class="topbar">
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#shop">Shop</a>
+          <a href="#bundles">Bundles</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <section id="home" class="hero">
+      <h1>Luxury self-improvement printables for teens</h1>
+      <p class="small">Challenges, planners, routines and trackers designed to help you build real habits. Instant digital downloads — print or save as PDF.</p>
+      <div style="margin-top:14px">
+        <a class="button" href="#shop">Shop All</a>
+        <a class="button" href="#bundles" style="background:#2A2A2A;margin-left:10px">See Bundles</a>
+      </div>
+    </section>
+
+    <h2 style="margin-top:26px">Shop</h2>
+    <div id="shop" class="grid" aria-live="polite">
+      <!-- Product cards -->
+    </div>
+
+    <section id="bundles">
+      <h2 style="margin-top:30px">Bundles</h2>
+      <div class="grid" style="margin-bottom:18px">
+        <div class="card center">
+          <div class="badge">Ultimate</div>
+          <h3>Ultimate Teen Glow Up Bundle</h3>
+          <p class="small">All 15 products in one pack — full system.</p>
+          <div class="price">R240</div>
+          <button class="button" onclick="scrollToProduct('bundle-1')">View</button>
+        </div>
+        <div class="card center">
+          <div class="badge">Popular</div>
+          <h3>Confidence Bundle</h3>
+          <p class="small">Prompts, challenges & mindset tools.</p>
+          <div class="price">R130</div>
+          <button class="button" onclick="scrollToProduct('bundle-2')">View</button>
+        </div>
+        <div class="card center">
+          <h3>Routine Starter Pack</h3>
+          <p class="small">Planners + morning & night routines.</p>
+          <div class="price">R110</div>
+          <button class="button" onclick="scrollToProduct('bundle-3')">View</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="products-area">
+      <!-- product detail pages (hidden anchors) -->
+    </section>
+
+    <div class="footer">TeenGlow Lab — Self Improvement & Glow Up</div>
+  </div>
+
+<script>
+/* ---------- PRODUCT DATA (15 products) ---------- */
+const products = [
+  {id:1,slug:'30-day-glow-up-challenge',title:'30-Day Teen Glow Up Challenge',price:'R60',short:'30 daily tasks for confidence, skincare, fitness & mindset.',content: `HOW IT WORKS\n- 1 task per day\n- Check off each day\n- Results come from habits, not motivation\n\nDAY 1: Clean your phone (delete junk apps/photos)\nDAY 2: Create a simple skincare routine\nDAY 3: Drink 2L of water\nDAY 4: 20 min walk\nDAY 5: Journal 5 things you want to change\nDAY 6: Make your bed + room tidy\nDAY 7: No sugar for 24 hours\nDAY 8: Make a “future self” Pinterest board\nDAY 9: Stretch for 10 minutes\nDAY10: 1 hour no social media\nDAY11: Write 10 affirmations\nDAY12: Upgrade your outfit (simple, clean look)\nDAY13: Night routine reset\nDAY14: Try a 5-minute meditation\nDAY15: Learn something new (YouTube mini-lesson)\nDAY16: Fix your posture today\nDAY17: Eat one clean meal\nDAY18: Practice confidence: speak clearly today\nDAY19: Organize school/work space\nDAY20: Make a weekly routine\nDAY21: Walk 3000+ steps\nDAY22: Hydrate + stretch\nDAY23: Mini digital detox (no phone for 1 hour)\nDAY24: Write 10 goals\nDAY25: Improve one habit\nDAY26: Skincare self-care night\nDAY27: Try the “silent hour” challenge\nDAY28: Compliment yourself 5 times\nDAY29: Build tomorrow’s to-do list\nDAY30: Reflect: “How did I improve?”`},
+  {id:2,slug:'50-confidence-prompts',title:'50 Confidence Prompts for Teens',price:'R30',short:'Aesthetic journal prompts to boost self-esteem and confidence.',content:`1. What do I admire about myself?\n2. What makes me feel powerful?\n3. What habits make me confident?\n4. What am I underestimating about myself?\n5. What would my confident self do?\n6. When do I feel the most like me?\n7. Write a victory from this week.\n8. What compliments do people give me most?\n9. What skill do I want to improve?\n10. ... (and 40 more prompts included in the printable)`},
+  {id:3,slug:'daily-planner',title:'Teen Glow-Up Daily Planner',price:'R35',short:'Daily planner: skincare, mood, outfit, priorities & reflection.',content:`DAILY PLANNER\n- Today’s Mood\n- Skincare Routine (AM/PM)\n- Outfit / Fit Check\n- Top 3 Priorities\n- Water Tracker (8)  - Tasks - Notes - Daily Reflection`},
+  {id:4,slug:'weekly-reset-planner',title:'Weekly Reset Routine Planner',price:'R30',short:'Weekly checklist for skincare, fitness, study & habits.',content:`WEEKLY RESET\n- Skincare Plan\n- Fitness Plan\n- Study Plan\n- Glow Goals\n- Weekly Checklist\n- Habit Tracker`},
+  {id:5,slug:'100-self-improvement-prompts',title:'100 Self-Improvement Prompts',price:'R40',short:'100 prompts to develop habits, mindset & routines.',content:`(Full 100 prompts printable included. Sample:)\n1. What are 3 small wins this week?\n2. Where do I want to be in 6 months?\n... up to 100 prompts in the printable.`},
+  {id:6,slug:'20-morning-routines',title:'20 Morning Routines for Teens',price:'R30',short:'20 aesthetic morning routines: soft girl, clean girl, sporty.',content:`(Examples)\n- Soft Girl Morning: Make bed, drink water, stretch, skincare, clean outfit, light breakfast\n- Study Morning: 20 min review, prioritized tasks, 30 min study block`},
+  {id:7,slug:'20-night-routines',title:'20 Night Routines for Teens',price:'R30',short:'20 bedtime routines for rest, skincare & reflection.',content:`(Examples)\n- Clean Girl Night: Cleanse, moisturize, plan tomorrow, 10 min reading\n- Digital Detox Night: no screens 1 hour before bed`},
+  {id:8,slug:'365-day-tracker',title:'365-Day Glow-Up Tracker',price:'R80',short:'Year-long habit & progress tracker with monthly pages.',content:`YEAR TRACKER\n- Monthly habit grid\n- Water + sleep tracker\n- Monthly reflection pages\n(12 months included)`},
+  {id:9,slug:'fitness-starter-pack',title:'Glow-Up Fitness Starter Pack',price:'R50',short:'Beginner workouts, 7-day plan & printable tracker.',content:`FITNESS PACK\n- 10 beginner workouts (bodyweight)\n- 7-day starter plan\n- Warm up / cool down\n- Printable progress tracker`},
+  {id:10,slug:'skincare-guide',title:'Teen Skincare Guide (Beginner)',price:'R35',short:'Simple AM & PM skincare routines made for teens.',content:`SKINCARE GUIDE\n- AM: gentle cleanser, moisturizer, SPF\n- PM: cleanse, treatment (optional), moisturizer\n- Weekly: exfoliate 1x, mask 1x\n(Non-medical, beginner-friendly)`},
+  {id:11,slug:'vision-board-kit',title:'Aesthetic Vision Board Kit',price:'R25',short:'Printable words, icons & templates for vision boards.',content:`VISION KIT\n- 100+ words & cutouts\n- Blank frames\n- Simple layout instructions`},
+  {id:12,slug:'14-day-confidence-challenge',title:'14-Day Confidence Challenge',price:'R25',short:'Two-week confidence building daily tasks.',content:`14-DAY CONFIDENCE\nDay1: Speak up in class once\nDay2: Compliment 3 people\n... Day14: Record a 60s self-appreciation`},
+  {id:13,slug:'mindset-reset-workbook',title:'Mindset Reset Workbook',price:'R45',short:'Workbook to identify & rewrite limiting beliefs.',content:`MINDSET WORKBOOK\n- Identify limiting beliefs\n- Evidence for/against each belief\n- Reframe exercise\n- Affirmations`},
+  {id:14,slug:'habit-reset-pack',title:'Habit Reset Pack',price:'R30',short:'Habit trackers, stacking system & dopamine detox.',content:`HABIT PACK\n- 30-day habit tracker\n- Habit stacking guide\n- 3-day dopamine detox checklist`},
+  {id:15,slug:'social-glow-up-pack',title:'Social Glow-Up Pack',price:'R35',short:'Conversation starters, confidence tips & social goals.',content:`SOCIAL PACK\n- Intro lines & openers\n- Conversation prompts\n- Energy & posture tips`}
+];
+
+/* ---------- render shop grid ---------- */
+const shopGrid = document.querySelector('#shop');
+products.forEach(p => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  const img = document.createElement('img');
+  img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%' height='100%' fill='#F9F7F5'/><text x='40' y='80' font-family='Playfair Display, serif' font-size='26' fill='#2A2A2A'>TeenGlow Lab</text><text x='40' y='130' font-family='Montserrat, sans-serif' font-size='20' fill='#2A2A2A'>${escapeHtml(p.title)}</text><text x='40' y='170' font-family='Cormorant Garamond, serif' font-size='16' fill='#A49382'>${escapeHtml(p.short)}</text></svg>`);
+  card.appendChild(img);
+  const h = document.createElement('h3');
+  h.textContent = p.title; card.appendChild(h);
+  const s = document.createElement('div'); s.className = 'meta'; s.textContent = p.short; card.appendChild(s);
+  const price = document.createElement('div'); price.className='price'; price.textContent = p.price; card.appendChild(price);
+  const btn = document.createElement('button'); btn.className='button'; btn.textContent='View'; btn.onclick = ()=> openProduct(p.id); card.appendChild(btn);
+  shopGrid.appendChild(card);
+});
+
+/* ---------- product templates ---------- */
+const productsArea = document.querySelector('#products-area');
+products.forEach(p=>{
+  const wrapper = document.createElement('div');
+  wrapper.id = `prod-${p.slug}`;
+  wrapper.style.marginTop = '26px';
+  wrapper.innerHTML = `
+    <div class="product-content" role="region" aria-labelledby="title-${p.id}">
+      <div style="display:flex;justify-content:space-between;align-items:start;gap:12px">
+        <div>
+          <h2 id="title-${p.id}">${p.title}</h2>
+          <div class="small">${p.short}</div>
+        </div>
+        <div style="text-align:right">
+          <div class="price">${p.price}</div>
+          <button class="print-btn" onclick="printProduct(${p.id})">Print / Save PDF</button>
+        </div>
+      </div>
+      <hr />
+      <div id="content-${p.id}">
+        <pre style="white-space:pre-wrap;font-family:inherit">${escapeHtml(p.content)}</pre>
+      </div>
+      <div style="margin-top:12px" class="small">Instant digital download • Printable A4 pages • Designed by TeenGlow Lab</div>
+    </div>
+  `;
+  productsArea.appendChild(wrapper);
+});
+
+/* ---------- helper functions ---------- */
+function openProduct(id){
+  const p = products.find(x=>x.id===id);
+  const el = document.getElementById(`prod-${p.slug}`);
+  if(!el) return;
+  window.location.hash = `prod-${p.slug}`;
+  // smooth scroll
+  setTimeout(()=> el.scrollIntoView({behavior:'smooth',block:'start'}),100);
+}
+function printProduct(id){
+  // open a new window with printable HTML then call print
+  const p = products.find(x=>x.id===id);
+  const html = `
+  <html><head><meta charset="utf-8"><title>${escapeHtml(p.title)}</title>
+  <style>
+    body{font-family:Montserrat, Arial, sans-serif;background:#fff;color:#222;padding:36px;max-width:800px;margin:auto}
+    h1{font-family:Playfair Display, Georgia, serif}
+    .meta{color:#666}
+    pre{white-space:pre-wrap;font-size:16px}
+  </style>
+  </head>
+  <body>
+    <h1>TeenGlow Lab — Self Improvement & Glow Up</h1>
+    <h2>${escapeHtml(p.title)}</h2>
+    <div class="meta">${escapeHtml(p.short)}</div>
+    <hr />
+    <pre>${escapeHtml(p.content)}</pre>
+    <footer style="margin-top:30px;color:#666;font-size:13px">TeenGlow Lab — Self Improvement & Glow Up</footer>
+  </body></html>`;
+  const w = window.open('','_blank');
+  w.document.open();
+  w.document.write(html);
+  w.document.close();
+  w.focus();
+  // slight delay then print dialog
+  setTimeout(()=> w.print(),400);
+}
+
+function scrollToProduct(id){
+  const el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* escape helper */
+function escapeHtml(s){ if(!s) return ''; return s.replace(/[&<>"']/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];})}
+</script>
+</body>
+</html>
